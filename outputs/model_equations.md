@@ -86,3 +86,5 @@ Where:
 * ε represents the error term.
 
 The dummy variables allow categorical information to be incorporated into the regression model while avoiding redundancy and multicollinearity.
+
+
