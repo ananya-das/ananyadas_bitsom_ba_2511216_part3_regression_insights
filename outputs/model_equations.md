@@ -6,6 +6,9 @@
 * [Coefficient Explanations](#coefficient-explanations)
 * [Region Dummy Variables](#region-dummy-variables)
 * [Store Type Dummy Variables](#store-type-dummy-variables)
+* [Reference Categories Used](#reference-categories-used)
+* [Final Model Selected](#final-model-selected)
+* [Reason for Selecting the Final Model](#reason-for-selecting-the-final-model)
   
 # Dummy Variable Creation and Model Specification
 
@@ -253,4 +256,66 @@ The following variables are not statistically significant at the 5% level:
 These variables should be interpreted cautiously because there is insufficient evidence that they meaningfully affect monthly sales after controlling for other factors.
 
 ---
+
+# Reference Categories Used
+
+To incorporate categorical variables into the regression model, dummy variables were created. One category from each variable was omitted and used as the reference category to avoid multicollinearity.
+
+### Region Reference Category
+
+**West Region** was selected as the reference category.
+
+The coefficients for Region_East, Region_North, and Region_South represent the difference in monthly sales compared with stores located in the West region.
+
+### Store Type Reference Category
+
+**Residential Store** was selected as the reference category.
+
+The coefficients for Store_Mall, Store_HighStreet, and Store_Airport represent the difference in monthly sales compared with Residential stores.
+
+---
+
+# Final Model Selected
+
+### Selected Model
+
+The final model selected was the **Multiple Regression Model** containing:
+
+* Marketing Spend
+* Footfall
+* Inventory Availability Percentage
+* Customer Rating
+* Region_East
+* Region_North
+* Region_South
+* Store_Mall
+* Store_HighStreet
+* Store_Airport
+
+### Model Performance
+
+* R² = 0.831
+* Adjusted R² = 0.826
+* Overall model significance (Significance F) = 5.43 × 10⁻¹¹³
+
+The model explains approximately **83.1% of the variation in monthly sales**, indicating strong predictive performance.
+
+---
+
+# Reason for Selecting the Final Model
+
+The multiple regression model was selected because it provides the most complete understanding of the factors influencing monthly sales performance.
+
+Unlike the simple regression models, which evaluate only one factor at a time, the multiple regression model considers marketing activity, customer traffic, inventory management, customer satisfaction, regional differences, and store format simultaneously. This provides a more realistic representation of how sales are generated in a retail environment.
+
+From a business perspective, the model helps management identify the key levers that can be used to improve sales performance:
+
+* **Footfall** was identified as the strongest sales driver, indicating that attracting more customers into stores should remain a strategic priority.
+* **Marketing Spend** showed a positive and significant impact on sales, supporting continued investment in marketing initiatives.
+* **Inventory Availability** demonstrated a strong positive relationship with sales, highlighting the importance of maintaining product availability and reducing stock-outs.
+* **Customer Rating** was positively associated with sales, suggesting that customer experience improvements can contribute to revenue growth.
+* **Store Type** analysis showed that Airport, Mall, and High Street stores generally outperform Residential stores, providing useful insights for expansion and investment decisions.
+* **Regional analysis** revealed that East-region stores tend to underperform relative to West-region stores after controlling for other factors.
+
+The model was chosen because it not only delivers strong statistical performance but also provides actionable business insights that can support decisions related to marketing allocation, inventory planning, customer experience improvements, and future store investment strategies.
 
