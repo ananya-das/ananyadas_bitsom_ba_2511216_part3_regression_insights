@@ -75,3 +75,150 @@ To preserve data integrity, all cleaning activities were performed in a separate
 - Store ID (identifier only)
 - Transaction ID
 - Serial Number
+
+# 4. Regression Approach
+
+The analysis followed a structured regression workflow to identify factors associated with monthly sales performance.
+
+### Step 1: Data Preparation
+- Reviewed and cleaned the dataset.
+- Preserved the original data in a separate worksheet.
+- Standardized categorical values and verified numerical fields.
+
+### Step 2: Simple Regression Analysis
+Two simple regression models were developed using monthly sales as the dependent variable:
+1. Marketing Spend → Monthly Sales
+2. Footfall → Monthly Sales
+
+These models were used to evaluate the individual relationship between each predictor and sales.
+
+### Step 3: Multiple Regression Analysis
+A multiple regression model was developed using:
+- Marketing Spend
+- Footfall
+- Inventory Availability Percentage
+- Customer Rating
+- Region Dummy Variables
+- Store Type Dummy Variables
+
+This model was used to evaluate the combined effect of multiple business factors on monthly sales.
+
+---
+
+# 5. Dummy Variable Approach
+
+The dataset contained categorical variables that could not be directly included in a regression model.
+
+### Region
+
+Reference Category:
+- West
+
+Dummy Variables Created:
+- Region_East
+- Region_North
+- Region_South
+
+### Store Type
+
+Reference Category:
+- Residential
+
+Dummy Variables Created:
+- Store_Mall
+- Store_HighStreet
+- Store_Airport
+
+Reference categories were excluded from the model to avoid multicollinearity and the dummy variable trap.
+
+---
+
+# 6. Model Comparison Summary
+
+Three regression models were evaluated.
+
+| Model | Independent Variables | R² | Key Finding |
+|---------|---------|---------|---------|
+| Simple Regression 1 | Marketing Spend | 0.167 | Marketing spend positively impacts sales |
+| Simple Regression 2 | Footfall | (Insert Footfall R²) | Customer traffic strongly influences sales |
+| Multiple Regression | Marketing Spend, Footfall, Inventory Availability, Customer Rating, Region Dummies, Store Type Dummies | 0.831 | Provides the strongest explanation of sales performance |
+
+The multiple regression model substantially outperformed the simple regression models and was selected as the final model.
+
+---
+
+# 7. Final Model Selected
+
+### Selected Model
+Multiple Regression Model
+
+### Variables Included
+
+Numerical Variables:
+- Marketing Spend
+- Footfall
+- Inventory Availability Percentage
+- Customer Rating
+
+Dummy Variables:
+- Region_East
+- Region_North
+- Region_South
+- Store_Mall
+- Store_HighStreet
+- Store_Airport
+
+### Performance
+
+- R² = 0.831
+- Adjusted R² = 0.826
+
+The model explains approximately 83.1% of the variation in monthly sales and provides strong predictive performance.
+
+---
+
+# 8. Business Recommendation
+
+The analysis identified several factors that are strongly associated with monthly sales performance.
+
+Leadership should prioritize:
+
+- Increasing customer footfall through targeted marketing and customer engagement initiatives.
+- Maintaining high inventory availability to reduce lost sales opportunities.
+- Continuing strategic marketing investments that support store traffic and sales growth.
+- Improving customer experience and customer satisfaction.
+- Prioritizing Airport, Mall, and High Street store formats when evaluating future investments and expansion opportunities.
+
+The findings suggest that operational execution, customer traffic, and store format play important roles in driving sales performance.
+
+---
+
+# 9. Assumptions and Limitations
+
+### Assumptions
+
+- Relationships between variables and sales are approximately linear.
+- Observations are independent.
+- Variables included in the model are measured accurately.
+- Historical patterns are representative of current business conditions.
+
+### Limitations
+
+- Regression identifies association rather than causation.
+- The dataset does not include competitor activity, seasonality, demographics, weather, or economic conditions.
+- Some store-level operational factors may not be captured.
+- Residual analysis indicates that additional unobserved factors influence sales performance.
+- Results are based on historical data and may not fully predict future outcomes.
+
+---
+
+# 10. Screenshots Included
+
+The following screenshots have been included as evidence of analysis:
+
+- screenshots/simple_regression_output.png
+- screenshots/multiple_regression_output.png
+- screenshots/model_comparison_preview.png
+- screenshots/residuals_preview.png
+
+These screenshots provide supporting evidence for the regression models, model comparison, and residual analysis performed during the project.
